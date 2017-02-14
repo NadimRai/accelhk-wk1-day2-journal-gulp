@@ -1,0 +1,23 @@
+{
+  "name": "journal-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadimRai/accelhk-wk1-day2-journal-gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadimRai/accelhk-wk1-day2-journal-gulp/issues"
+  },
+  "homepage": "https://github.com/NadimRai/accelhk-wk1-day2-journal-gulp#readme",
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "gulp": "^3.9.1"
+  }
+}
