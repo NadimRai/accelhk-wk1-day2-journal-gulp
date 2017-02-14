@@ -1,3 +1,23 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var Entry = require('./../js/journal.js').journalModule;
+
+$(document).ready(function() {
+  $('#entry-form').submit(function(event) {
+    event.preventDefault();
+    var titleEntry = $('#title-entry').val();
+    var bodyEntry = $('#body-entry').val();
+    var newEntry = new Entry(titleEntry, bodyEntry);
+    var words = newEntry.words(bodyEntry);
+    var vowels = newEntry.vowels(bodyEntry);
+    var consonants = newEntry.consonants(bodyEntry);
+    var firstsentence = newEntry.firstsentence(bodyEntry);
+    $('#number-words').text(words);
+    $('#number-vowels').text(vowels);
+    $('#number-consonants').text(consonants);
+    $('#get-teaser').text(firstsentence);
+    });
+  });
+},{"./../js/journal.js":2}],2:[function(require,module,exports){
 function Entry(title, body) {
   this.titleEntry = title;
   this.bodyEntry = body;
@@ -44,3 +64,5 @@ Entry.prototype.firstsentence = function(bodyEntry) {
 }
 
 exports.journalModule = Entry;
+
+},{}]},{},[1]);
